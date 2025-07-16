@@ -4,8 +4,13 @@ from unittest import mock
 
 
 @mock.patch("app.main.datetime")
-def test_outdated_products(mock_date) -> None:
-    products = [{"name": "salmon", "expiration_date": datetime.date(2022, 2, 10), "price": 600},
+def test_outdated_products(mock_date: datetime) -> None:
+    products = [
+        {
+            "name": "salmon",
+            "expiration_date": datetime.date(2022, 2, 10),
+            "price": 600
+        },
         {
             "name": "chicken",
             "expiration_date": datetime.date(2022, 2, 5),
